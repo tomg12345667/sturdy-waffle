@@ -8,7 +8,7 @@ This Privacy Policy explains how we handle information when you use this bot. We
 
 ## 2. Data Collection
 
-We do not collect, store, or process any data about you or your usage of this bot. No personal information, message content, server data, or usage logs are retained in any form, all data is logged to your target discord channel.
+We do not collect, store, or process any data about you or your usage of this bot. No personal information, message content, server data, or usage logs are retained in any form, all data is logged to your target discord channel, so the only data collected is your server id and the channel id so the bot knows where to post logs.
 
 ## 3. Third-Party Services
 
