@@ -33,11 +33,15 @@ async function registerCommands(){
     (async () => {
         try {
             console.log(`Started refreshing ${commandData.length} application (/) commands.`);
-            const data = await rest.put(
-                Routes.applicationCommands(client.application.id),
-                {body: commandData},
-            );
-            console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+            // Upsert each command so slash commands from other software sharing
+            // this bot token (e.g. a modmail bot) are left untouched.
+            for (const cmd of commandData) {
+                await rest.post(
+                    Routes.applicationCommands(client.application.id),
+                    {body: cmd},
+                );
+            }
+            console.log(`Successfully reloaded ${commandData.length} application (/) commands.`);
         } catch (error) {
             console.error(error);
         }
@@ -80,7 +84,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.login(token).then(registerCommands);
 
-client.on('ready', async () => {
+client.on(Events.ClientReady, async () => {
     client.user.setPresence({ activities: [{ name: `Keeping an eye on events across ${client.guilds.cache.size} servers` }] });
 })
 

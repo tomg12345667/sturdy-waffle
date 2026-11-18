@@ -28,6 +28,13 @@ module.exports = {
     execute: async function (interaction) {
         let event = interaction.options.getString('event')
         let eventbool = interaction.options.getBoolean('log')
+        const allowed = ['channelCreate','channelDelete','channelUpdate','guildBanAdd','guildBanRemove','guildEmojiCreate','guildEmojiDelete','guildEmojiUpdate','guildInviteCreate','guildMemberAdd','guildMemberRemove','guildMemberOnboarding','guildMemberUpdate','guildRoleCreate','guildRoleDelete','guildRoleUpdate','guildStickerCreate','guildStickerDelete','guildStickerUpdate','guildUpdate','messageBulkDelete','messageDelete','messageDeleteAttachments','messageUpdate','voiceStateUpdate']
+        if (!allowed.includes(event)) {
+            return interaction.reply({content: `Unknown event \`${event}\`. Pick one from the list.`, flags: MessageFlags.Ephemeral});
+        }
+        if (!(await tableExists(interaction.guildId))) {
+            return interaction.reply({content: 'Run /setchannel first.', flags: MessageFlags.Ephemeral});
+        }
         let db = new sqlite3.Database('./config.db', (err) => {if (err) {console.log(err.message);}});
         if(await tableExists(interaction.guildId)) {
             db.run(`UPDATE "${interaction.guildId}" SET ${event}="${+ eventbool}"`, function (err) {

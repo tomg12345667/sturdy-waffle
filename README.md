@@ -1,6 +1,17 @@
 # OpenLoggerBot
 **An open source Discord logger bot**
 
+> Based on [HDR/OpenLoggerBot](https://github.com/HDR/OpenLoggerBot) by HDR, licensed under GPL-3.0.
+> This version adds bug fixes (see [Changes in this version](#changes-in-this-version)) and pm2 hosting.
+
+## Add the bot to your server
+**[➕ Invite the bot](INVITE_LINK_HERE)**
+
+Then run `/setchannel #your-log-channel`. Every event is logged by default; turn off any you don't want with `/config <event> false`.
+
+- [Terms of Service](TOS.md)
+- [Privacy Policy](Privacy%20Policy.md)
+
 ## External Tools
 [.log file viewer for OpenLoggerBot](https://martinrefseth.com/olb/logview/)
 
@@ -10,11 +21,28 @@
 - [A Discord Application](https://discord.com/developers/applications)
 
 ### Setup:
-1. `git clone https://github.com/HDR/OpenLoggerBot.git`
+1. `git clone REPO_URL_HERE OpenLoggerBot`
 2. `cd OpenLoggerBot`
-2. Rename `config-example.json` to `config.json` and populate the `token`
-3. `npm install`
-4. `node index.js`
+3. Copy `config-example.json` to `config.json` and put in your bot `token`
+4. `npm install`
+5. Start it:
+   - with pm2 (recommended, keeps it running): `pm2 start ecosystem.config.js && pm2 save`
+   - or directly: `node index.js`
+
+To update later: `git pull && npm install && pm2 restart openloggerbot`
+
+### Making your own copy public
+1. In the [Discord Developer Portal](https://discord.com/developers/applications), on the **Bot** tab, turn on **Public Bot** and all three **Privileged Gateway Intents**.
+2. Invite link (replace `YOUR_APP_ID`):
+   `https://discord.com/oauth2/authorize?client_id=YOUR_APP_ID&scope=bot+applications.commands&permissions=117920`
+3. Above 100 servers Discord requires verification and intent approval, and links to your Terms of Service and Privacy Policy.
+
+### Changes in this version
+- Fixed a crash when a server's settings row is missing (`/setchannel` could create an empty table, so every event crashed the bot).
+- `/config` now only accepts the listed event names (it previously put any text typed into the database query).
+- Slash command registration no longer wipes other commands on the same bot token (e.g. a modmail bot).
+- Added `ecosystem.config.js` for pm2.
+- Use `clientReady` instead of the deprecated `ready` event.
 
 
 ## Commands
