@@ -26,7 +26,7 @@ To the extent allowed by law, we are not liable for any loss or damage arising f
 
 ## 6. Open source
 
-The bot's source code is available on [GitHub](https://github.com/ringnetcpbx/logwarden) under the GPL-3.0 licence. These terms cover the hosted bot; the licence covers the code.
+The bot's source code is available on [GitHub](https://github.com/tomg12345667/sturdy-waffle) under the GPL-3.0 licence. These terms cover the hosted bot; the licence covers the code.
 
 ## 7. Changes
 
@@ -34,4 +34,4 @@ We may update these terms. The date at the top shows the latest version. Continu
 
 ## 8. Contact
 
-Questions? Open an issue on [GitHub](https://github.com/ringnetcpbx/logwarden/issues).
+Questions? Open an issue on [GitHub](https://github.com/tomg12345667/sturdy-waffle/issues).

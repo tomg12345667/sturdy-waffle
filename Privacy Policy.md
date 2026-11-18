@@ -36,4 +36,4 @@ We may update this policy. The date at the top shows the latest version.
 
 ## 7. Contact
 
-Questions or deletion requests? Open an issue on [GitHub](https://github.com/ringnetcpbx/logwarden/issues).
+Questions or deletion requests? Open an issue on [GitHub](https://github.com/tomg12345667/sturdy-waffle/issues).

