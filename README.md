@@ -146,3 +146,4 @@ To update later: `git pull && npm install && pm2 restart logwarden`
 - [Zipplet](https://github.com/zipplet) for helping me test OpenLoggerBot
 - [JetBrains](https://www.jetbrains.com/?from=DMG-Bot) for providing a non-commercial open source licence to their products
 - Inspired by [Logger](https://logger.bot/)
+- **Claude AI** Claude assisted by getting the GitHub Pages up and getting the logo created.
