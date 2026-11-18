@@ -1,9 +1,9 @@
-// pm2 config for OpenLoggerBot
-// Place this file in the root of the OpenLoggerBot folder, then: pm2 start ecosystem.config.js
+// pm2 config for Logwarden
+// Place this file in the root of the Logwarden folder, then: pm2 start ecosystem.config.js
 module.exports = {
   apps: [
     {
-      name: "openloggerbot",
+      name: "logwarden",
       script: "index.js",
       // The bot uses relative paths (./config.json, ./commands, ./events, config.db),
       // so it MUST run with its own folder as the working directory.

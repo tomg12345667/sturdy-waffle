@@ -5,7 +5,7 @@ const {tableExists} = require("../commonFunctions");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('config')
-        .setDescription('Configure OpenLoggerBot')
+        .setDescription('Configure Logwarden')
         .addStringOption(option =>
             option.setName('event')
                 .setDescription('Target Event')

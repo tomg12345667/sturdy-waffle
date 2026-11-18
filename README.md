@@ -1,7 +1,9 @@
-# OpenLoggerBot
-**An open source Discord logger bot**
+<img src="assets/logo.png" width="128" alt="Logwarden logo">
 
-> Based on [HDR/OpenLoggerBot](https://github.com/HDR/OpenLoggerBot) by HDR, licensed under GPL-3.0.
+# Logwarden
+**Every change in your server, on the record.** An open source Discord logging bot.
+
+> Logwarden is based on [HDR/OpenLoggerBot](https://github.com/HDR/OpenLoggerBot) by HDR, licensed under GPL-3.0.
 > This version adds bug fixes (see [Changes in this version](#changes-in-this-version)) and pm2 hosting.
 
 ## Add the bot to your server
@@ -13,7 +15,7 @@ Then run `/setchannel #your-log-channel`. Every event is logged by default; turn
 - [Privacy Policy](Privacy%20Policy.md)
 
 ## External Tools
-[.log file viewer for OpenLoggerBot](https://martinrefseth.com/olb/logview/)
+[.log file viewer (from the original OpenLoggerBot)](https://martinrefseth.com/olb/logview/)
 
 ## Installation
 ### Requirements:
@@ -21,15 +23,15 @@ Then run `/setchannel #your-log-channel`. Every event is logged by default; turn
 - [A Discord Application](https://discord.com/developers/applications)
 
 ### Setup:
-1. `git clone REPO_URL_HERE OpenLoggerBot`
-2. `cd OpenLoggerBot`
+1. `git clone https://github.com/tomg12345667/sturdy-waffle.git Logwarden`
+2. `cd Logwarden`
 3. Copy `config-example.json` to `config.json` and put in your bot `token`
 4. `npm install`
 5. Start it:
    - with pm2 (recommended, keeps it running): `pm2 start ecosystem.config.js && pm2 save`
    - or directly: `node index.js`
 
-To update later: `git pull && npm install && pm2 restart openloggerbot`
+To update later: `git pull && npm install && pm2 restart logwarden`
 
 ### Making your own copy public
 1. In the [Discord Developer Portal](https://discord.com/developers/applications), on the **Bot** tab, turn on **Public Bot** and all three **Privileged Gateway Intents**.
