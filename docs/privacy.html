@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Logwarden</title>
+<meta name="description" content="Every change in your server, on the record. Logwarden is a free, open source Discord logging bot.">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="brand" href="./"><img src="logo.png" alt="">Logwarden</a>
+<a href="https://discord.com/oauth2/authorize?client_id=1572432117311340676&amp;scope=bot+applications.commands&amp;permissions=117920">Invite</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+<a href="https://github.com/ringnetcpbx/logwarden">GitHub</a>
+</nav></div></header>
+<main><div class="wrap">
+<h1>Privacy Policy</h1>
+<p class="muted">Last updated: November 17, 2026</p>
+<h2>1. What the bot stores</h2>
+<p>For each server that sets it up, Logwarden saves:</p>
+<ul>
+<li>the server's ID</li>
+<li>the ID of the channel chosen with <code>/setchannel</code></li>
+<li>which events are turned on or off with <code>/config</code></li>
+</ul>
+<p>That is all the bot saves to disk. It does not keep a database of messages, members or activity.</p>
+<h2>2. What the bot processes</h2>
+<p>To post logs, the bot receives events from Discord, such as messages, edits, deletions, member joins and leaves, role and channel changes, voice activity and audit log entries. Discord.js keeps recent messages in memory for a short time so that the bot can show what a message said before it was edited or deleted. This memory is cleared when the bot restarts and is never written to disk.</p>
+<p>The logs themselves are posted in the log channel of your own server. Once posted, they are stored by Discord as normal messages and are controlled by that server's staff, not by us.</p>
+<h2>3. Sharing</h2>
+<p>We do not sell or share any data. Data is only sent to Discord, as needed to post logs.</p>
+<h2>4. Deleting data</h2>
+<p>When the bot is removed from a server, that server's saved settings are deleted automatically. Logs already posted in your server can be deleted by your server's staff like any other message.</p>
+<h2>5. Third parties</h2>
+<p>The bot runs on Discord, and your use of Discord is covered by <a href="https://discord.com/privacy">Discord's Privacy Policy</a>.</p>
+<h2>6. Changes</h2>
+<p>We may update this policy. The date at the top shows the latest version.</p>
+<h2>7. Contact</h2>
+<p>Questions or deletion requests? Open an issue on <a href="https://github.com/ringnetcpbx/logwarden/issues">GitHub</a>.</p>
+</div></main>
+<footer><div class="wrap">Logwarden is free and open source under the GPL-3.0 licence, based on <a href="https://github.com/HDR/OpenLoggerBot">OpenLoggerBot</a> by HDR. Not affiliated with Discord.</div></footer>
+</body>
+</html>

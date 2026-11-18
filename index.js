@@ -84,6 +84,15 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.login(token).then(registerCommands);
 
+// When the bot is removed from a server, delete that server's saved settings.
+client.on(Events.GuildDelete, (guild) => {
+    const db = new sqlite3.Database('./config.db', (err) => {if (err) {console.log(err.message);}});
+    db.run(`DROP TABLE IF EXISTS "${guild.id}"`, (err) => {
+        if (err) console.log(err.message);
+        db.close();
+    });
+});
+
 client.on(Events.ClientReady, async () => {
     client.user.setPresence({ activities: [{ name: `Keeping an eye on events across ${client.guilds.cache.size} servers` }] });
 })

@@ -1,19 +1,39 @@
 # Privacy Policy
 
-**Last updated:** June 11, 2026
+Last updated: November 17, 2026
 
-## 1. Overview
+## 1. What the bot stores
 
-This Privacy Policy explains how we handle information when you use this bot. We are committed to protecting your privacy.
+For each server that sets it up, Logwarden saves:
 
-## 2. Data Collection
+- the server's ID
+- the ID of the channel chosen with `/setchannel`
+- which events are turned on or off with `/config`
 
-We do not collect, store, or process any data about you or your usage of this bot. No personal information, message content, server data, or usage logs are retained in any form, all data is logged to your target discord channel, so the only data collected is your server id and the channel id so the bot knows where to post logs.
+That is all the bot saves to disk. It does not keep a database of messages, members or activity.
 
-## 3. Third-Party Services
+## 2. What the bot processes
 
-This bot operates on Discord. Your use of Discord is subject to [Discord's Privacy Policy](https://discord.com/privacy).
+To post logs, the bot receives events from Discord, such as messages, edits, deletions, member joins and leaves, role and channel changes, voice activity and audit log entries. Discord.js keeps recent messages in memory for a short time so that the bot can show what a message said before it was edited or deleted. This memory is cleared when the bot restarts and is never written to disk.
 
-## 4. Changes
+The logs themselves are posted in the log channel of your own server. Once posted, they are stored by Discord as normal messages and are controlled by that server's staff, not by us.
 
-We may update this Privacy Policy at any time. Continued use of the bot constitutes acceptance of any changes.
+## 3. Sharing
+
+We do not sell or share any data. Data is only sent to Discord, as needed to post logs.
+
+## 4. Deleting data
+
+When the bot is removed from a server, that server's saved settings are deleted automatically. Logs already posted in your server can be deleted by your server's staff like any other message.
+
+## 5. Third parties
+
+The bot runs on Discord, and your use of Discord is covered by [Discord's Privacy Policy](https://discord.com/privacy).
+
+## 6. Changes
+
+We may update this policy. The date at the top shows the latest version.
+
+## 7. Contact
+
+Questions or deletion requests? Open an issue on [GitHub](https://github.com/ringnetcpbx/logwarden/issues).

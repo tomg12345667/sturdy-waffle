@@ -7,7 +7,7 @@
 > This version adds bug fixes (see [Changes in this version](#changes-in-this-version)) and pm2 hosting.
 
 ## Add the bot to your server
-**[➕ Invite the bot](INVITE_LINK_HERE)**
+**[➕ Invite the bot](https://discord.com/oauth2/authorize?client_id=1572432117311340676&scope=bot+applications.commands&permissions=117920)**
 
 Then run `/setchannel #your-log-channel`. Every event is logged by default; turn off any you don't want with `/config <event> false`.
 
@@ -23,7 +23,7 @@ Then run `/setchannel #your-log-channel`. Every event is logged by default; turn
 - [A Discord Application](https://discord.com/developers/applications)
 
 ### Setup:
-1. `git clone https://github.com/tomg12345667/sturdy-waffle.git Logwarden`
+1. `git clone https://github.com/ringnetcpbx/logwarden.git Logwarden`
 2. `cd Logwarden`
 3. Copy `config-example.json` to `config.json` and put in your bot `token`
 4. `npm install`
@@ -44,6 +44,8 @@ To update later: `git pull && npm install && pm2 restart logwarden`
 - `/config` now only accepts the listed event names (it previously put any text typed into the database query).
 - Slash command registration no longer wipes other commands on the same bot token (e.g. a modmail bot).
 - Added `ecosystem.config.js` for pm2.
+- A server's saved settings are deleted when the bot is removed from it.
+- Website with Terms of Service and Privacy Policy in `docs/` (for GitHub Pages).
 - Use `clientReady` instead of the deprecated `ready` event.
 
 
