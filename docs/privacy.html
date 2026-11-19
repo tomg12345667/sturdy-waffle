@@ -18,13 +18,18 @@
 </nav></div></header>
 <main><div class="wrap">
 <h1>Privacy Policy</h1>
-<p class="muted">Last updated: November 17, 2026</p>
+<p class="muted">Last updated: November 18, 2026</p>
 <h2>1. What the bot stores</h2>
 <p>For each server that sets it up, Logwarden saves:</p>
 <ul>
 <li>the server's ID</li>
 <li>the ID of the channel chosen with <code>/setchannel</code></li>
 <li>which events are turned on or off with <code>/config</code></li>
+</ul>
+<p>Two other things may be saved by the bot's owner:</p>
+<ul>
+<li><strong>Maintenance copies:</strong> before the owner changes a server's Logwarden settings during maintenance, a copy of that server's settings (the same three items above) is kept so they can be restored. It is deleted once restored, or when the bot leaves the server.</li>
+<li><strong>Blacklist:</strong> if a server or user is blocked from using the bot, their server or user ID, the date, and the reason given are kept so the block keeps working.</li>
 </ul>
 <p>That is all the bot saves to disk. It does not keep a database of messages, members or activity.</p>
 <h2>2. What the bot processes</h2>
@@ -33,7 +38,7 @@
 <h2>3. Sharing</h2>
 <p>We do not sell or share any data. Data is only sent to Discord, as needed to post logs.</p>
 <h2>4. Deleting data</h2>
-<p>When the bot is removed from a server, that server's saved settings are deleted automatically. Logs already posted in your server can be deleted by your server's staff like any other message.</p>
+<p>When the bot is removed from a server, that server's saved settings and any maintenance copy are deleted automatically. Blacklist entries are kept until the owner removes them; to ask about one, contact us below. Logs already posted in your server can be deleted by your server's staff like any other message.</p>
 <h2>5. Third parties</h2>
 <p>The bot runs on Discord, and your use of Discord is covered by <a href="https://discord.com/privacy">Discord's Privacy Policy</a>.</p>
 <h2>6. Changes</h2>

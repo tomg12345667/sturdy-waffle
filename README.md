@@ -36,14 +36,19 @@ To update later: `git pull && npm install && pm2 restart logwarden`
 ### Owner dashboard (`/owner`)
 Add your own server's ID to `config.json` as `"ownerGuildId"` and restart. The `/owner` command then appears **only in that server** and only answers the bot's owner (the Developer Portal app owner or team members; add more with `"ownerIds": ["id", ...]`). Every reply is private.
 
+Every command that changes a server asks first: **do it & notify the server owner**, **do it without notifying**, or **cancel**. Notices go by DM, or to the server's log channel if the owner's DMs are closed. The first settings change on a server puts it under **maintenance**: its original settings are saved, and `/owner restore` puts them back.
+
 | Command | What it does |
 |---|---|
 | `/owner stats` | Servers, members, uptime, ping, memory, errors since start |
 | `/owner servers [page]` | Every server the bot is in, and which have set up logging |
 | `/owner server <server>` | One server's owner, log channel, missing permissions and which events are on |
-| `/owner leave <server>` | Make the bot leave a server (asks to confirm; deletes its settings) |
-| `/owner setchannel <server> <channel>` | Set a server's log channel |
-| `/owner event <server> <event or all> <on>` | Turn events on or off for a server |
+| `/owner setchannel <server> <channel>` | Set a server's log channel (starts maintenance) |
+| `/owner event <server> <event or all> <on>` | Turn events on or off for a server (starts maintenance) |
+| `/owner restore <server>` | End maintenance and put the server's saved settings back |
+| `/owner leave <server> [reason]` | Make the bot leave a server (deletes its settings) |
+| `/owner blacklist add <server or user ID> [type] [reason]` | Block a server, or a user from every server they own; the bot leaves them and auto-leaves if re-added |
+| `/owner blacklist remove <id>` / `list` | Undo a block / see every block |
 | `/owner errors [clear]` | The bot's recent errors, kept across restarts in `errors.json` |
 
 ### Making your own copy public

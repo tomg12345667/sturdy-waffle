@@ -107,9 +107,19 @@ client.on(Events.GuildDelete, (guild) => {
         if (err) console.log(err.message);
         db.close();
     });
+    ownerCommand.onGuildDelete(guild.id).catch(console.error);
+});
+
+// Blacklisted servers (or servers owned by a blacklisted user) are left straight away.
+client.on(Events.GuildCreate, (guild) => {
+    ownerCommand.enforceBlacklist(guild).catch(console.error);
 });
 
 client.on(Events.ClientReady, async () => {
+    // Catch any blacklisted servers that added the bot while it was offline.
+    for (const guild of client.guilds.cache.values()) {
+        await ownerCommand.enforceBlacklist(guild).catch(console.error);
+    }
     client.user.setPresence({ activities: [{ name: `Keeping an eye on events across ${client.guilds.cache.size} servers` }] });
 })
 

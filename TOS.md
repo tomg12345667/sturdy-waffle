@@ -1,6 +1,6 @@
 # Terms of Service
 
-Last updated: November 17, 2026
+Last updated: November 18, 2026
 
 ## 1. Agreement
 
@@ -18,7 +18,11 @@ The bot is provided free, as is, with no guarantee that it will always be online
 
 ## 4. Removing access
 
-We may remove the bot from any server or block its use where it is being misused.
+We may remove the bot from any server, or blacklist a server or user from using it, where it is being misused. A blacklisted server or user's servers will be left automatically if the bot is added again. We may tell the server owner when this happens.
+
+## 4a. Maintenance
+
+We may change a server's Logwarden settings while fixing problems. When we do, the server's original settings are saved first and restored when maintenance is complete.
 
 ## 5. Liability
 
