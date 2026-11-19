@@ -1,7 +1,9 @@
+require('./errorLog'); // record errors for /owner errors (load first)
 const { Collection, REST, Routes, Events, AuditLogEvent, EmbedBuilder} = require('discord.js');
 const fs = require('fs')
 const sqlite3 = require("sqlite3");
-const { token } = require('./config.json')
+const { token, ownerGuildId } = require('./config.json')
+const ownerCommand = require('./owner/Owner.js');
 const { client } = require("./constants");
 const { tableExists, eventState } = require("./commonFunctions");
 
@@ -21,6 +23,7 @@ for (const file of commands) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.data.name, command)
 }
+client.commands.set(ownerCommand.data.name, ownerCommand)
 
 async function registerCommands(){
     const commandData = []
@@ -42,6 +45,17 @@ async function registerCommands(){
                 );
             }
             console.log(`Successfully reloaded ${commandData.length} application (/) commands.`);
+
+            // The owner dashboard only exists in the owner's own server.
+            if (ownerGuildId) {
+                await rest.post(
+                    Routes.applicationGuildCommands(client.application.id, ownerGuildId),
+                    {body: ownerCommand.data.toJSON()},
+                );
+                console.log(`Registered /owner in server ${ownerGuildId}.`);
+            } else {
+                console.log('Tip: add "ownerGuildId" to config.json to get the /owner dashboard in your server.');
+            }
         } catch (error) {
             console.error(error);
         }
@@ -81,6 +95,8 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 
 });
+
+client.on(Events.Error, (error) => console.error(error));
 
 client.login(token).then(registerCommands);
 

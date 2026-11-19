@@ -10,3 +10,4 @@ OpenLoggerBot.iml
 config.db
 .idea/sqldialects.xml
 /.idea
+/errors.json

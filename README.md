@@ -33,6 +33,19 @@ Then run `/setchannel #your-log-channel`. Every event is logged by default; turn
 
 To update later: `git pull && npm install && pm2 restart logwarden`
 
+### Owner dashboard (`/owner`)
+Add your own server's ID to `config.json` as `"ownerGuildId"` and restart. The `/owner` command then appears **only in that server** and only answers the bot's owner (the Developer Portal app owner or team members; add more with `"ownerIds": ["id", ...]`). Every reply is private.
+
+| Command | What it does |
+|---|---|
+| `/owner stats` | Servers, members, uptime, ping, memory, errors since start |
+| `/owner servers [page]` | Every server the bot is in, and which have set up logging |
+| `/owner server <server>` | One server's owner, log channel, missing permissions and which events are on |
+| `/owner leave <server>` | Make the bot leave a server (asks to confirm; deletes its settings) |
+| `/owner setchannel <server> <channel>` | Set a server's log channel |
+| `/owner event <server> <event or all> <on>` | Turn events on or off for a server |
+| `/owner errors [clear]` | The bot's recent errors, kept across restarts in `errors.json` |
+
 ### Making your own copy public
 1. In the [Discord Developer Portal](https://discord.com/developers/applications), on the **Bot** tab, turn on **Public Bot** and all three **Privileged Gateway Intents**.
 2. Invite link (replace `YOUR_APP_ID`):
@@ -45,6 +58,7 @@ To update later: `git pull && npm install && pm2 restart logwarden`
 - Slash command registration no longer wipes other commands on the same bot token (e.g. a modmail bot).
 - Added `ecosystem.config.js` for pm2.
 - A server's saved settings are deleted when the bot is removed from it.
+- `/owner` dashboard for the bot owner (see above).
 - Website with Terms of Service and Privacy Policy in `docs/` (for GitHub Pages).
 - Use `clientReady` instead of the deprecated `ready` event.
 
